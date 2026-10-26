@@ -1,0 +1,4 @@
+interface:
+  display_name: "ascg Mapping"
+  short_description: "Propose, check and approve atom-to-bead mappings"
+  default_prompt: "Use $ascg-mapping to review or propose the CG mapping."

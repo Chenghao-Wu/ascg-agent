@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# ascg launcher (plugin bin/ is on the agent's PATH). Finds the ascg sources: ASCG_SRC, or the repository that
+# contains this plugin (plugin/ascg/bin -> ../../../src); without them (a plugin installed from a marketplace) the
+# installed package (pip install ascg-agent). And a Python: ASCG_PYTHON, else the first Python >= 3.9 on PATH with the
+# numerical core's dependencies (RDKit, numpy; and ascg itself when there are no sources; remembered in
+# ~/.cache/ascg/python), else any >= 3.9.
+here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+src="${ASCG_SRC:-$here/../../../src}"
+need='import rdkit, numpy'
+[ -d "$src/ascg" ] || need='import rdkit, numpy, ascg'
+py="${ASCG_PYTHON:-}"
+cache="${XDG_CACHE_HOME:-$HOME/.cache}/ascg/python"
+if [ -z "$py" ] && [ -f "$cache" ]; then
+  py="$(cat "$cache")"
+  { [ -x "$py" ] && "$py" -c "$need" 2>/dev/null; } || py=""
+fi
+if [ -z "$py" ]; then
+  fallback=""
+  while IFS= read -r c; do
+    "$c" -c 'import sys; sys.exit(0 if sys.version_info >= (3, 9) else 1)' 2>/dev/null || continue
+    [ -n "$fallback" ] || fallback="$c"
+    if "$c" -c "$need" 2>/dev/null; then
+      py="$c"
+      mkdir -p "$(dirname "$cache")" 2>/dev/null && echo "$c" > "$cache" 2>/dev/null
+      break
+    fi
+  done < <(type -ap python3 python 2>/dev/null | awk '!seen[$0]++')
+  py="${py:-$fallback}"
+fi
+if [ -d "$src/ascg" ]; then
+  export PYTHONPATH="$src${PYTHONPATH:+:$PYTHONPATH}"
+elif ! "$py" -c 'import ascg' 2>/dev/null; then
+  echo '{"ok": false, "error": "ascg is not installed for any Python on PATH: pip install ascg-agent (with RDKit), or set ASCG_PYTHON / ASCG_SRC"}'
+  exit 1
+fi
+exec "$py" -m ascg "$@"

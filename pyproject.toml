@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ascg-agent"
+version = "0.6.0"
+description = "Agentic systematic coarse-graining of polymers and soft matter: deterministic ascg tools, multistate IBI on fastMD, and skills for Claude Code and Codex"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "ascg-agent contributors"}]
+requires-python = ">=3.10"
+keywords = ["coarse-graining", "iterative Boltzmann inversion", "polymers", "soft matter", "molecular dynamics",
+            "coding agents", "MCP"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+# The numerical core and the mapping tools (ascg map check) need these; fastMD (CG engine, with its Python package)
+# and AutoPoly v2.0 (AA build) are installed from their repositories.
+dependencies = ["numpy>=1.24", "scipy>=1.10", "matplotlib>=3.7", "rdkit>=2023.9", "networkx>=3.0", "PyYAML>=6.0"]
+
+[project.optional-dependencies]
+aa = ["MDAnalysis"]
+dev = ["pytest>=8"]
+
+[project.urls]
+Repository = "https://github.com/Chenghao-Wu/ascg-agent"
+
+[project.scripts]
+ascg = "ascg.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ascg_core = ["ibi/data/*.tgz"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

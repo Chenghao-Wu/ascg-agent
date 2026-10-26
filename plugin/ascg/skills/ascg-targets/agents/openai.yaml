@@ -1,0 +1,4 @@
+interface:
+  display_name: "ascg Targets"
+  short_description: "Check the target distributions of a mapped reference before fitting"
+  default_prompt: "Use $ascg-targets to check the fitting targets."

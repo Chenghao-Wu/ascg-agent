@@ -1,0 +1,35 @@
+{
+ "id": "map_pnipam_3bead",
+ "title": "Mapping from a description: PNIPAM, three beads per repeat unit",
+ "held_out": true,
+ "prompt": "I want to coarse-grain poly(N-isopropylacrylamide) with three beads per repeat unit. Propose the mapping I can use with ascg. Only propose it; do not build or run anything.",
+ "library": "none",
+ "max_turns": 40,
+ "timeout_min": 20,
+ "checks": [
+  {
+   "id": "checked",
+   "type": "called",
+   "tool": "map check",
+   "ok": true
+  },
+  {
+   "id": "three_beads",
+   "type": "result",
+   "tool": "map check",
+   "expr": "r['ok'] and r['species'][0]['kind'] == 'repeat_unit' and r['species'][0]['beads_per_unit'] == 3",
+   "which": "any"
+  },
+  {
+   "id": "only_proposed",
+   "type": "not_called",
+   "tool": [
+    "map save",
+    "map approve",
+    "run submit",
+    "aa import",
+    "ref build"
+   ]
+  }
+ ]
+}

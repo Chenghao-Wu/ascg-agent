@@ -1,0 +1,35 @@
+{
+ "id": "map_hexane_3bead",
+ "title": "Mapping from a description: liquid n-hexane, three beads",
+ "held_out": false,
+ "prompt": "I want a three-bead coarse-grained model of liquid n-hexane. Propose the mapping I can use with ascg. Only propose it; do not build or run anything.",
+ "library": "none",
+ "max_turns": 40,
+ "timeout_min": 20,
+ "checks": [
+  {
+   "id": "checked",
+   "type": "called",
+   "tool": "map check",
+   "ok": true
+  },
+  {
+   "id": "three_beads_2_2_2",
+   "type": "result",
+   "tool": "map check",
+   "expr": "r['ok'] and r['species'][0]['beads_per_molecule'] == 3 and sorted(len(b['heavy_atoms']) for b in r['species'][0]['beads']) == [2, 2, 2]",
+   "which": "any"
+  },
+  {
+   "id": "only_proposed",
+   "type": "not_called",
+   "tool": [
+    "map save",
+    "map approve",
+    "run submit",
+    "aa import",
+    "ref build"
+   ]
+  }
+ ]
+}

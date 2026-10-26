@@ -1,0 +1,4 @@
+interface:
+  display_name: "ascg Coarse-grain a system"
+  short_description: "Run a systematic coarse-graining study end to end with the ascg tools"
+  default_prompt: "Use $ascg-study to coarse-grain this system end to end."

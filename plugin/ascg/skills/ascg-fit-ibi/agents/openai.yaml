@@ -1,0 +1,4 @@
+interface:
+  display_name: "ascg Fit with IBI"
+  short_description: "Fit the CG model with multistate IBI in fastMD through ascg"
+  default_prompt: "Use $ascg-fit-ibi to run and follow the IBI fit."

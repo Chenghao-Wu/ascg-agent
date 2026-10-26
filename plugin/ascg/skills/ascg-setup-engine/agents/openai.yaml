@@ -1,0 +1,4 @@
+interface:
+  display_name: "ascg Set up fastMD"
+  short_description: "Install and check fastMD with tabulated and combined bending-torsion dihedrals for ascg"
+  default_prompt: "Use $ascg-setup-engine to check or build fastMD."

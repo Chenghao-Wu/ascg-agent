@@ -1,0 +1,4 @@
+interface:
+  display_name: "ascg Specify the system"
+  short_description: "Turn a coarse-graining request into a specification"
+  default_prompt: "Use $ascg-specify-system to turn this request into a specification."

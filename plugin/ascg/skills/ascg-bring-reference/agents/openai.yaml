@@ -1,0 +1,4 @@
+interface:
+  display_name: "ascg Bring your own reference"
+  short_description: "Use the user's own AA trajectories as the reference"
+  default_prompt: "Use $ascg-bring-reference to inspect and map the user's own AA simulation."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "ascg Diagnose"
+  short_description: "Diagnose a CG task that stopped on a gate, missed convergence or shows a suspicious result"
+  default_prompt: "Use $ascg-diagnose to find out why this task stopped and what to do."

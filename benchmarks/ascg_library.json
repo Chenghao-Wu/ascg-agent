@@ -1,0 +1,1594 @@
+{
+ "schema": "ascg-library/1",
+ "name": "ascg benchmark v1 (40 systems)",
+ "description": "Version 1 of the ascg benchmark: 33 polymers, 6 molecular liquids and 1 liquid mixture, with their CG mappings (status benchmark_v1: defined by the benchmark; a new study confirms the partition with its user) and AA recipes (aa_recipes.json). User data for the general ascg tools, not part of the plugin; see README.md.",
+ "systems": [
+  {
+   "key": "pe",
+   "id": "B01",
+   "name": "Polyethylene",
+   "system_class": "polymer",
+   "aliases": [],
+   "resolution": "1 bead per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "E": [
+      [
+       "A",
+       "all"
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "pe"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "pp",
+   "id": "B02",
+   "name": "Polypropylene",
+   "system_class": "polymer",
+   "aliases": [],
+   "resolution": "1 bead per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "P": [
+      [
+       "A",
+       "all"
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "pp"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "pib",
+   "id": "B03",
+   "name": "Polyisobutylene",
+   "system_class": "polymer",
+   "aliases": [],
+   "resolution": "1 bead per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "IB": [
+      [
+       "A",
+       "all"
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "pib"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "pa",
+   "id": "B04",
+   "name": "Polyacetylene",
+   "system_class": "polymer",
+   "aliases": [],
+   "resolution": "1 bead per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "A": [
+      [
+       "A",
+       "all"
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "pa"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "pom",
+   "id": "B05",
+   "name": "Polyoxymethylene",
+   "system_class": "polymer",
+   "aliases": [],
+   "resolution": "1 bead per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "OM": [
+      [
+       "A",
+       "all"
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "pom"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "peo",
+   "id": "B06",
+   "name": "Poly(ethylene oxide)",
+   "system_class": "polymer",
+   "aliases": [
+    "peg",
+    "polyethylene glycol"
+   ],
+   "resolution": "1 bead per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "EO": [
+      [
+       "A",
+       "all"
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "peo"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "pvf",
+   "id": "B07",
+   "name": "Poly(vinyl fluoride)",
+   "system_class": "polymer",
+   "aliases": [],
+   "resolution": "1 bead per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "VF": [
+      [
+       "A",
+       "all"
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "pvf"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "pvc",
+   "id": "B08",
+   "name": "Poly(vinyl chloride)",
+   "system_class": "polymer",
+   "aliases": [
+    "polyvinyl chloride"
+   ],
+   "resolution": "1 bead per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "VC": [
+      [
+       "A",
+       "all"
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "pvc"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "pvdf",
+   "id": "B09",
+   "name": "Poly(vinylidene fluoride)",
+   "system_class": "polymer",
+   "aliases": [],
+   "resolution": "1 bead per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "VDF": [
+      [
+       "A",
+       "all"
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "pvdf"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "pva",
+   "id": "B10",
+   "name": "Poly(vinyl alcohol)",
+   "system_class": "polymer",
+   "aliases": [
+    "pvoh",
+    "polyvinyl alcohol"
+   ],
+   "resolution": "1 bead per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "VA": [
+      [
+       "A",
+       "all"
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "pva"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "ppo",
+   "id": "B11",
+   "name": "Poly(propylene oxide)",
+   "system_class": "polymer",
+   "aliases": [],
+   "resolution": "1 bead per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "PO": [
+      [
+       "A",
+       "all"
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "ppo"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "pb1",
+   "id": "B12",
+   "name": "Poly(1-butene)",
+   "system_class": "polymer",
+   "aliases": [],
+   "resolution": "2 beads per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "B1": [
+      [
+       "A",
+       [
+        0,
+        1
+       ]
+      ],
+      [
+       "B",
+       [
+        2,
+        3
+       ]
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "pb1"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "p4m1p",
+   "id": "B13",
+   "name": "Poly(4-methyl-1-pentene)",
+   "system_class": "polymer",
+   "aliases": [
+    "pmp"
+   ],
+   "resolution": "2 beads per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "MP": [
+      [
+       "A",
+       [
+        0,
+        1
+       ]
+      ],
+      [
+       "B",
+       [
+        2,
+        3,
+        4,
+        5
+       ]
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "p4m1p"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "pmve",
+   "id": "B14",
+   "name": "Poly(methyl vinyl ether)",
+   "system_class": "polymer",
+   "aliases": [],
+   "resolution": "2 beads per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "MVE": [
+      [
+       "A",
+       [
+        0,
+        1
+       ]
+      ],
+      [
+       "B",
+       [
+        2,
+        3
+       ]
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "pmve"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "pbd",
+   "id": "B15",
+   "name": "Poly(1,3-butadiene)",
+   "system_class": "polymer",
+   "aliases": [
+    "polybutadiene"
+   ],
+   "resolution": "2 beads per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "BD": [
+      [
+       "A",
+       [
+        0,
+        1
+       ]
+      ],
+      [
+       "A",
+       [
+        2,
+        3
+       ]
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "pbd"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "pi",
+   "id": "B16",
+   "name": "Polyisoprene",
+   "system_class": "polymer",
+   "aliases": [],
+   "resolution": "2 beads per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "IP": [
+      [
+       "A",
+       [
+        0,
+        1,
+        2
+       ]
+      ],
+      [
+       "B",
+       [
+        3,
+        4
+       ]
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "pi"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "p23dmbd",
+   "id": "B17",
+   "name": "Poly(2,3-dimethyl-1,3-butadiene)",
+   "system_class": "polymer",
+   "aliases": [],
+   "resolution": "2 beads per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "DMBD": [
+      [
+       "A",
+       [
+        0,
+        1,
+        2
+       ]
+      ],
+      [
+       "A",
+       [
+        3,
+        4,
+        5
+       ]
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "p23dmbd"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "ps",
+   "id": "B18",
+   "name": "Polystyrene",
+   "system_class": "polymer",
+   "aliases": [],
+   "resolution": "2 beads per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "S": [
+      [
+       "A",
+       [
+        0,
+        1
+       ]
+      ],
+      [
+       "B",
+       [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+       ]
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "ps"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "pan",
+   "id": "B19",
+   "name": "Polyacrylonitrile",
+   "system_class": "polymer",
+   "aliases": [],
+   "resolution": "2 beads per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "AN": [
+      [
+       "A",
+       [
+        0,
+        1
+       ]
+      ],
+      [
+       "B",
+       [
+        2,
+        3
+       ]
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "pan"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "pams",
+   "id": "B20",
+   "name": "Poly(alpha-methylstyrene)",
+   "system_class": "polymer",
+   "aliases": [],
+   "resolution": "2 beads per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "AMS": [
+      [
+       "A",
+       [
+        0,
+        1,
+        2
+       ]
+      ],
+      [
+       "B",
+       [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+       ]
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "pams"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "pcr",
+   "id": "B21",
+   "name": "Polychloroprene",
+   "system_class": "polymer",
+   "aliases": [],
+   "resolution": "2 beads per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "CP": [
+      [
+       "A",
+       [
+        0,
+        1,
+        2
+       ]
+      ],
+      [
+       "B",
+       [
+        3,
+        4
+       ]
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "pcr"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "pla",
+   "id": "B22",
+   "name": "Poly(lactic acid)",
+   "system_class": "polymer",
+   "aliases": [],
+   "resolution": "2 beads per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "LA": {
+      "first": [
+       [
+        "A",
+        [
+         0,
+         1,
+         2,
+         3
+        ]
+       ],
+       [
+        "B",
+        [
+         4,
+         5
+        ]
+       ]
+      ],
+      "middle": [
+       [
+        "A",
+        [
+         0,
+         1,
+         2
+        ]
+       ],
+       [
+        "B",
+        [
+         3,
+         4
+        ]
+       ]
+      ],
+      "last": [
+       [
+        "A",
+        [
+         0,
+         1,
+         2
+        ]
+       ],
+       [
+        "B",
+        [
+         3,
+         4,
+         5,
+         6
+        ]
+       ]
+      ]
+     }
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "pla"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "pcl",
+   "id": "B23",
+   "name": "Polycaprolactam",
+   "system_class": "polymer",
+   "aliases": [
+    "nylon 6",
+    "nylon-6",
+    "pa6",
+    "polycaprolactam"
+   ],
+   "resolution": "3 beads per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "CL": {
+      "first": [
+       [
+        "A",
+        [
+         0,
+         1,
+         2,
+         3,
+         4,
+         5
+        ]
+       ],
+       [
+        "B",
+        [
+         6,
+         7
+        ]
+       ],
+       [
+        "C",
+        [
+         8,
+         9,
+         10
+        ]
+       ]
+      ],
+      "middle": [
+       [
+        "A",
+        [
+         0,
+         1,
+         2
+        ]
+       ],
+       [
+        "B",
+        [
+         3,
+         4
+        ]
+       ],
+       [
+        "C",
+        [
+         5,
+         6,
+         7
+        ]
+       ]
+      ],
+      "last": [
+       [
+        "A",
+        [
+         0,
+         1,
+         2
+        ]
+       ],
+       [
+        "B",
+        [
+         3,
+         4
+        ]
+       ],
+       [
+        "C",
+        [
+         5,
+         6,
+         7,
+         8,
+         9
+        ]
+       ]
+      ]
+     }
+    },
+    "note": "Three beads per repeat unit, split inside the unit as written: A = -NH-CH2CH2-, B = -CH2CH2-, C = -CH2-C(=O)-; end caps fold into the terminal beads, no end types."
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "pcl"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "sbs",
+   "id": "B24",
+   "name": "Poly(styrene-co-butadiene)",
+   "system_class": "polymer",
+   "aliases": [
+    "styrene butadiene styrene",
+    "sbs triblock"
+   ],
+   "resolution": "1 bead per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "S": [
+      [
+       "S",
+       "all"
+      ]
+     ],
+     "BD": [
+      [
+       "B",
+       "all"
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "sbs"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "ep",
+   "id": "B25",
+   "name": "Poly(ethylene-co-propylene)",
+   "system_class": "polymer",
+   "aliases": [],
+   "resolution": "1 bead per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "E": [
+      [
+       "E",
+       "all"
+      ]
+     ],
+     "P": [
+      [
+       "P",
+       "all"
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "ep"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "eva_alt",
+   "id": "B26",
+   "name": "Poly(ethylene-co-vinyl alcohol), alternating",
+   "system_class": "polymer",
+   "aliases": [],
+   "resolution": "1 bead per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "E": [
+      [
+       "E",
+       "all"
+      ]
+     ],
+     "VA": [
+      [
+       "V",
+       "all"
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "eva_alt"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "eva_periodic",
+   "id": "B27",
+   "name": "Poly(ethylene-co-vinyl alcohol), periodic",
+   "system_class": "polymer",
+   "aliases": [],
+   "resolution": "1 bead per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "ascg-repeat-unit-groups",
+    "units": {
+     "E": [
+      [
+       "E",
+       "all"
+      ]
+     ],
+     "VA": [
+      [
+       "V",
+       "all"
+      ]
+     ]
+    }
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "eva_periodic"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "pmma",
+   "id": "B28",
+   "name": "Poly(methyl methacrylate)",
+   "system_class": "polymer",
+   "aliases": [
+    "poly methyl methacrylate",
+    "acrylic glass"
+   ],
+   "resolution": "2 beads per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "rdkit-heavy-atom-indices",
+    "smiles": "[*]CC(C)(C(=O)OC)[*]",
+    "bead_sites": [
+     {
+      "site_id": "BB",
+      "bead_type": "PMMA_BACKBONE",
+      "heavy_atom_indices_1based": [
+       2,
+       3,
+       4
+      ],
+      "description": "backbone CH2-C(CH3)"
+     },
+     {
+      "site_id": "EST",
+      "bead_type": "PMMA_ESTER",
+      "heavy_atom_indices_1based": [
+       5,
+       6,
+       7,
+       8
+      ],
+      "description": "COOCH3 pendant ester"
+     }
+    ],
+    "bead_types": null,
+    "components": null
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "pmma"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "pdms",
+   "id": "B29",
+   "name": "Polydimethylsiloxane (PDMS)",
+   "system_class": "polymer",
+   "aliases": [
+    "silicone",
+    "polydimethylsiloxane"
+   ],
+   "resolution": "1 bead per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "rdkit-heavy-atom-indices",
+    "smiles": "[*][Si](C)(C)O[*]",
+    "bead_sites": [
+     {
+      "site_id": "PD",
+      "bead_type": "PDMS_REPEAT",
+      "heavy_atom_indices_1based": [
+       2,
+       3,
+       4,
+       5
+      ],
+      "description": "Si(CH3)2-O as one bead"
+     }
+    ],
+    "bead_types": null,
+    "components": null
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "pdms"
+   },
+   "force_field_override": "ff/pdms_oplsaa_xiang2025.json"
+  },
+  {
+   "key": "pvac",
+   "id": "B30",
+   "name": "Poly(vinyl acetate) (PVAc)",
+   "system_class": "polymer",
+   "aliases": [
+    "polyvinyl acetate"
+   ],
+   "resolution": "2 beads per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "rdkit-heavy-atom-indices",
+    "smiles": "[*]CC(OC(C)=O)[*]",
+    "bead_sites": [
+     {
+      "site_id": "BB",
+      "bead_type": "PVAC_BACKBONE",
+      "heavy_atom_indices_1based": [
+       2,
+       3
+      ],
+      "description": "vinyl backbone CH2-CH"
+     },
+     {
+      "site_id": "AC",
+      "bead_type": "PVAC_ACETATE",
+      "heavy_atom_indices_1based": [
+       4,
+       5,
+       6,
+       7
+      ],
+      "description": "acetoxy pendant O-C(=O)-CH3"
+     }
+    ],
+    "bead_types": null,
+    "components": null
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "pvac"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "pnba",
+   "id": "B31",
+   "name": "Poly(n-butyl acrylate) (PnBA)",
+   "system_class": "polymer",
+   "aliases": [
+    "poly n butyl acrylate",
+    "polybutyl acrylate"
+   ],
+   "resolution": "4 beads per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "rdkit-heavy-atom-indices",
+    "smiles": "[*]CC(C(=O)OCCCC)[*]",
+    "bead_sites": [
+     {
+      "site_id": "BB",
+      "bead_type": "PNBA_BACKBONE",
+      "heavy_atom_indices_1based": [
+       2,
+       3
+      ],
+      "description": "vinyl backbone CH2-CH"
+     },
+     {
+      "site_id": "EST",
+      "bead_type": "PNBA_ESTER",
+      "heavy_atom_indices_1based": [
+       4,
+       5,
+       6
+      ],
+      "description": "carboxylate C(=O)-O"
+     },
+     {
+      "site_id": "SC1",
+      "bead_type": "PNBA_BUTYL_NEAR",
+      "heavy_atom_indices_1based": [
+       7,
+       8
+      ],
+      "description": "near ester butyl CH2-CH2"
+     },
+     {
+      "site_id": "SC2",
+      "bead_type": "PNBA_BUTYL_END",
+      "heavy_atom_indices_1based": [
+       9,
+       10
+      ],
+      "description": "terminal butyl CH2-CH3"
+     }
+    ],
+    "bead_types": null,
+    "components": null
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "pnba"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "bpa_pc",
+   "id": "B32",
+   "name": "Bisphenol-A polycarbonate (BPA-PC)",
+   "system_class": "polymer",
+   "aliases": [
+    "polycarbonate",
+    "bpa pc"
+   ],
+   "resolution": "4 beads per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "rdkit-heavy-atom-indices",
+    "smiles": "[*]OC(=O)Oc1ccc(C(C)(C)c2ccc([*])cc2)cc1",
+    "bead_sites": [
+     {
+      "site_id": "CARB",
+      "bead_type": "BPA_PC_CARBONATE",
+      "heavy_atom_indices_1based": [
+       2,
+       3,
+       4,
+       5
+      ],
+      "description": "O-C(=O)-O carbonate linkage"
+     },
+     {
+      "site_id": "AR1",
+      "bead_type": "BPA_PC_PHENYL",
+      "heavy_atom_indices_1based": [
+       6,
+       7,
+       8,
+       9,
+       20,
+       21
+      ],
+      "description": "first phenylene ring"
+     },
+     {
+      "site_id": "BR",
+      "bead_type": "BPA_PC_BRIDGE",
+      "heavy_atom_indices_1based": [
+       10,
+       11,
+       12
+      ],
+      "description": "C(CH3)2 bridge"
+     },
+     {
+      "site_id": "AR2",
+      "bead_type": "BPA_PC_PHENYL",
+      "heavy_atom_indices_1based": [
+       13,
+       14,
+       15,
+       16,
+       18,
+       19
+      ],
+      "description": "second phenylene ring"
+     }
+    ],
+    "bead_types": null,
+    "components": null
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "bpa_pc"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "pet",
+   "id": "B33",
+   "name": "Poly(ethylene terephthalate) (PET)",
+   "system_class": "polymer",
+   "aliases": [
+    "polyethylene terephthalate"
+   ],
+   "resolution": "4 beads per repeat unit",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "rdkit-heavy-atom-indices",
+    "smiles": "[*]OCCOC(=O)c1ccc(cc1)C(=O)[*]",
+    "bead_sites": [
+     {
+      "site_id": "EG",
+      "bead_type": "PET_GLYCOL",
+      "heavy_atom_indices_1based": [
+       2,
+       3,
+       4,
+       5
+      ],
+      "description": "O-CH2-CH2-O glycol segment"
+     },
+     {
+      "site_id": "ES1",
+      "bead_type": "PET_ESTER",
+      "heavy_atom_indices_1based": [
+       6,
+       7
+      ],
+      "description": "first C(=O) ester group"
+     },
+     {
+      "site_id": "AR",
+      "bead_type": "PET_RING",
+      "heavy_atom_indices_1based": [
+       8,
+       9,
+       10,
+       11,
+       12,
+       13
+      ],
+      "description": "terephthalate phenylene ring"
+     },
+     {
+      "site_id": "ES2",
+      "bead_type": "PET_ESTER",
+      "heavy_atom_indices_1based": [
+       14,
+       15
+      ],
+      "description": "second C(=O) ester group"
+     }
+    ],
+    "bead_types": null,
+    "components": null
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "pet"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "n_hexane",
+   "id": "B34",
+   "name": "n-Hexane",
+   "system_class": "liquid",
+   "aliases": [
+    "hexane",
+    "n hexane"
+   ],
+   "resolution": "3 beads per molecule",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "rdkit-heavy-atom-indices",
+    "smiles": "CCCCCC",
+    "bead_sites": [
+     {
+      "site_id": "HT1",
+      "bead_type": "HEX_TERMINAL",
+      "heavy_atom_indices_1based": [
+       1,
+       2
+      ],
+      "description": "C1-C2 terminal ethyl group"
+     },
+     {
+      "site_id": "HM",
+      "bead_type": "HEX_MIDDLE",
+      "heavy_atom_indices_1based": [
+       3,
+       4
+      ],
+      "description": "C3-C4 internal ethylene group"
+     },
+     {
+      "site_id": "HT2",
+      "bead_type": "HEX_TERMINAL",
+      "heavy_atom_indices_1based": [
+       5,
+       6
+      ],
+      "description": "C5-C6 terminal ethyl group"
+     }
+    ],
+    "bead_types": null,
+    "components": null
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "n_hexane"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "cyclohexane",
+   "id": "B35",
+   "name": "Cyclohexane",
+   "system_class": "liquid",
+   "aliases": [],
+   "resolution": "3 beads per molecule",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "rdkit-heavy-atom-indices",
+    "smiles": "C1CCCCC1",
+    "bead_sites": [
+     {
+      "site_id": "CY1",
+      "bead_type": "CYC2",
+      "heavy_atom_indices_1based": [
+       1,
+       2
+      ],
+      "description": "ring carbons 1-2"
+     },
+     {
+      "site_id": "CY2",
+      "bead_type": "CYC2",
+      "heavy_atom_indices_1based": [
+       3,
+       4
+      ],
+      "description": "ring carbons 3-4"
+     },
+     {
+      "site_id": "CY3",
+      "bead_type": "CYC2",
+      "heavy_atom_indices_1based": [
+       5,
+       6
+      ],
+      "description": "ring carbons 5-6"
+     }
+    ],
+    "bead_types": null,
+    "components": null
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "cyclohexane"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "toluene",
+   "id": "B36",
+   "name": "Toluene",
+   "system_class": "liquid",
+   "aliases": [],
+   "resolution": "2 beads per molecule",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "rdkit-heavy-atom-indices",
+    "smiles": "Cc1ccccc1",
+    "bead_sites": [
+     {
+      "site_id": "ME",
+      "bead_type": "TOL_METHYL",
+      "heavy_atom_indices_1based": [
+       1
+      ],
+      "description": "methyl group"
+     },
+     {
+      "site_id": "AR",
+      "bead_type": "TOL_RING",
+      "heavy_atom_indices_1based": [
+       2,
+       3,
+       4,
+       5,
+       6,
+       7
+      ],
+      "description": "entire phenyl ring"
+     }
+    ],
+    "bead_types": null,
+    "components": null
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "toluene"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "acetone",
+   "id": "B37",
+   "name": "Acetone",
+   "system_class": "liquid",
+   "aliases": [],
+   "resolution": "3 beads per molecule",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "rdkit-heavy-atom-indices",
+    "smiles": "CC(=O)C",
+    "bead_sites": [
+     {
+      "site_id": "M1",
+      "bead_type": "ACT_METHYL",
+      "heavy_atom_indices_1based": [
+       1
+      ],
+      "description": "first equivalent methyl"
+     },
+     {
+      "site_id": "CO",
+      "bead_type": "ACT_CARBONYL",
+      "heavy_atom_indices_1based": [
+       2,
+       3
+      ],
+      "description": "carbonyl C=O"
+     },
+     {
+      "site_id": "M2",
+      "bead_type": "ACT_METHYL",
+      "heavy_atom_indices_1based": [
+       4
+      ],
+      "description": "second equivalent methyl"
+     }
+    ],
+    "bead_types": null,
+    "components": null
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "acetone"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "ethanol",
+   "id": "B38",
+   "name": "Ethanol",
+   "system_class": "liquid",
+   "aliases": [],
+   "resolution": "2 beads per molecule",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "rdkit-heavy-atom-indices",
+    "smiles": "CCO",
+    "bead_sites": [
+     {
+      "site_id": "ME",
+      "bead_type": "ETOH_METHYL",
+      "heavy_atom_indices_1based": [
+       1
+      ],
+      "description": "methyl CH3"
+     },
+     {
+      "site_id": "OH",
+      "bead_type": "ETOH_HYDROXYETHYL",
+      "heavy_atom_indices_1based": [
+       2,
+       3
+      ],
+      "description": "CH2OH with oxygen and hydroxyl H"
+     }
+    ],
+    "bead_types": null,
+    "components": null
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "ethanol"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "acetonitrile",
+   "id": "B39",
+   "name": "Acetonitrile",
+   "system_class": "liquid",
+   "aliases": [],
+   "resolution": "2 beads per molecule",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "rdkit-heavy-atom-indices",
+    "smiles": "CC#N",
+    "bead_sites": [
+     {
+      "site_id": "ME",
+      "bead_type": "ACN_METHYL",
+      "heavy_atom_indices_1based": [
+       1
+      ],
+      "description": "methyl CH3"
+     },
+     {
+      "site_id": "CN",
+      "bead_type": "ACN_NITRILE",
+      "heavy_atom_indices_1based": [
+       2,
+       3
+      ],
+      "description": "C#N polar nitrile"
+     }
+    ],
+    "bead_types": null,
+    "components": null
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "acetonitrile"
+   },
+   "force_field_override": null
+  },
+  {
+   "key": "n_hexane_toluene_mixture",
+   "id": "B40",
+   "name": "n-Hexane + toluene binary liquid mixture",
+   "system_class": "liquid_mixture",
+   "aliases": [
+    "hexane toluene"
+   ],
+   "resolution": "3 + 2 beads per molecule",
+   "mapping_status": "benchmark_v1",
+   "mapping": {
+    "format": "rdkit-heavy-atom-indices",
+    "smiles": null,
+    "bead_sites": null,
+    "bead_types": [
+     "HEX_TERMINAL",
+     "HEX_MIDDLE",
+     "TOL_METHYL",
+     "TOL_RING"
+    ],
+    "components": [
+     "B34",
+     "B36"
+    ]
+   },
+   "recipe": {
+    "file": "aa_recipes.json",
+    "task": "n_hexane_toluene_mixture"
+   },
+   "force_field_override": null
+  }
+ ]
+}

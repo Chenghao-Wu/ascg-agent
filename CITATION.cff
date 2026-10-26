@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use ascg-agent, please cite it as below."
+title: "Automated Systematic Coarse-Graining of Soft-Matter System with Agentic Workflow"
+type: software
+authors:
+  - family-names: Wu
+    given-names: Zhenghao
+    affiliation: "Xi'an Jiaotong-Liverpool University"
+license: MIT
+version: 0.6.0
+repository-code: "https://github.com/Chenghao-Wu/ascg-agent"
+keywords:
+  - coarse-graining
+  - iterative Boltzmann inversion
+  - polymers
+  - soft matter
+  - molecular dynamics
+  - coding agents

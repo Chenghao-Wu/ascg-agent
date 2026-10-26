@@ -1,0 +1,4 @@
+interface:
+  display_name: "ascg Improve ascg"
+  short_description: "Maintainer skill: mine agent traces and propose improvements to ascg skills and tools"
+  default_prompt: "Use $ascg-improve to mine a transcript and draft improvements."

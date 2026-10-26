@@ -1,0 +1,6 @@
+{
+  "name": "ascg-agent",
+  "owner": {"name": "ascg-agent contributors"},
+  "description": "Agentic systematic coarse-graining of polymers and soft matter",
+  "plugins": [{"name": "ascg", "source": "./plugin/ascg", "description": "Agentic systematic coarse-graining", "version": "0.6.0"}]
+}

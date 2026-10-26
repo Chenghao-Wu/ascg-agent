@@ -1,0 +1,100 @@
+
+# ---------------------------------------------------------------------------
+# ASCG additions, appended to AutoPoly v2.0 @ 22c79cb
+# AutoPoly/extern/rdlt_data/opls_lt_2024.fdefn by cluster/aa/apply_autopoly_patch.sh.
+# All types and charges are standard OPLS-AA entries of oplsaa2024.lt.
+# Family >= 230 so these outrank the PEO/ether and generic alkane patterns.
+# ---------------------------------------------------------------------------
+# H on a carbinol carbon (C-OH): alkane H 140 (+0.060), not the ether alpha-H
+# 185 (+0.030) that the PEO override assigns. Restores neutral alcohol groups
+# (PVA, EVOH, OH-terminated PEO/PPO): O 154 + H 155 + C 157/158 + H 140 = 0.
+DefineFeature @atom:140 [$([#1][CX4][OX2H1])]
+Family 230HC_CARBINOL
+EndFeature
+
+# H on a carbon bonded to a secondary amide N (nylon N-CH2, N-CH3 cap): alkane
+# H 140. AutoPoly leaves these untyped. N 238 + H 241 + C 244/242 + H 140 = 0.
+DefineFeature @atom:140 [$([#1][CX4][NX3][CX3]=[OX1])]
+Family 231HC_AMIDE_NC
+EndFeature
+
+# Aliphatic fluorides (PVF, PVDF); AutoPoly has aromatic C-F patterns only.
+# F on a carbon carrying a single F: monoalkyl fluoride F 956 (-0.220).
+DefineFeature @atom:956 [$([F][CX4;!$(C(F)F)])]
+Family 232F_MONOALKYL
+EndFeature
+
+# F on a CF2/CF3 carbon: perfluoroalkane F 965 (-0.120).
+DefineFeature @atom:965 [$([F][CX4]F)]
+Family 233F_PERFLUORO
+EndFeature
+
+# RCH2F carbon 957 (+0.020).
+DefineFeature @atom:957 [$([CX4H2](F)[#6])]
+Family 234CT_RCH2F
+EndFeature
+
+# R2CHF carbon 959 (+0.120): PVF backbone CHF.
+DefineFeature @atom:959 [$([CX4H1](F)([#6])[#6])]
+Family 235CT_R2CHF
+EndFeature
+
+# R3CF carbon 960 (+0.220).
+DefineFeature @atom:960 [$([CX4H0](F)([#6])([#6])[#6])]
+Family 236CT_R3CF
+EndFeature
+
+# CF2 between two carbons (PVDF): CT-class R3CF carbon 960 (+0.220). The
+# perfluoroalkane CF2 type 962 has class CF, which oplsaa2024.lt bonds only to
+# CF and F (no CF-CT bond), so it cannot sit next to CH2. With two F 965 the
+# group carries -0.02 e; ascg neutralize-aa moves it onto this carbon (+0.24,
+# the perfluoroalkane CF2 value). No CF3 pattern: CF3 961 is class CF as well.
+DefineFeature @atom:960 [$([CX4H0](F)(F)([#6])[#6])]
+Family 237CT_CF2_PVDF
+EndFeature
+
+# H on a carbon bearing F (RCHF, RCH2F): 958 (+0.100).
+DefineFeature @atom:958 [$([#1][CX4]F)]
+Family 239HC_CHF
+EndFeature
+
+# ---------------------------------------------------------------------------
+# ASCG additions for esters (PMMA, PVAc, PnBA, BPA-PC, PET) and acetonitrile. Standard OPLS-AA
+# types of oplsaa2024.lt only; these patterns occur in no other benchmark system.
+# ---------------------------------------------------------------------------
+# Ester alkoxy CH2 (R-CH2-O-C(=O)-): C(H2OS) ethyl ester 490 (+0.19). The PEO
+# override (182, ethyl ether +0.14, family 102) outranked the stock 490 rule and
+# left -0.05 e per ester (PVAc end, PnBA, PET). With 469 H, 467 O, 465/471 C and
+# 466 O the ester group is neutral again.
+DefineFeature @atom:490 [$([CH2X4][OX2][CX3]=[OX1])]
+Family 240CT_ESTER_CH2
+EndFeature
+
+# Carbonyl C of an aromatic carboxylic ester (Ar-C(=O)-O-C, terephthalate in
+# PET): Co in methyl benzoate 471 (+0.605); the ring ipso C stays benzene C
+# 145 (-0.115), as in OPLS methyl benzoate. The aliphatic ester C 465 (+0.49)
+# left -0.115 e per ester.
+DefineFeature @atom:471 [$([CX3](=[OX1])([OX2][CX4])c)]
+Family 241C_ARYL_CARBOXYLATE
+EndFeature
+
+# Methyl of acetonitrile: C of CH3 in CH3CN 755 (-0.08); the alkane CH3 54
+# (-0.18) left -0.10 e per molecule. (PAN's CH-CN is not matched.)
+DefineFeature @atom:755 [$([CH3X4][CX2]#[NX1])]
+Family 242CT_CH3CN
+EndFeature
+
+# Siloxanes (PDMS): OPLS-2024 silyl-ether types so that AutoPoly / moltemplate can build the structure:
+# Si in R3SiOR 1075, O in alkyl silyl ether 1078, CH3 on Si 1065. Not a force field for PDMS: OPLS-AA has no
+# D-unit Si nor Si-O torsions; the PDMS run replaces every parameter (benchmarks/ff/pdms_oplsaa_xiang2025.json).
+DefineFeature @atom:1075 [$([SiX4]([CX4])[OX2])]
+Family 243SI_SILOXANE
+EndFeature
+
+DefineFeature @atom:1078 [$([OX2]([Si])[Si])]
+Family 244OS_SILOXANE
+EndFeature
+
+DefineFeature @atom:1065 [$([CH3X4][Si])]
+Family 245CT_CH3_ON_SI
+EndFeature

@@ -1,0 +1,23 @@
+{
+  "name": "PDMS OPLS-AA with Qeq charges (Xiang et al., J. Phys. Chem. B 129 (2025), doi:10.1021/acs.jpcb.4c08471)",
+  "source": "https://github.com/COMO-lab/PDMS_benchmark param/OPLS/opls_system.in.settings and opls_system.data: the parameters the benchmark's 64 x 50-mer MDnM melt actually uses, per atom environment",
+  "reason": "OPLS-AA 2024 has no Si type for a siloxane D unit and no Si-O-Si torsions, so PDMS uses a dedicated force field.",
+  "scheme": "pdms",
+  "units": "LAMMPS real: kcal/mol, Angstrom, degrees; E_bond = K (r - r0)^2, E_angle = K (theta - theta0)^2, OPLS dihedral K1..K4; geometric mixing; 1-4 LJ and Coulomb x 0.5",
+  "atoms": {
+    "SiD": {"charge": 2.121, "sigma": 4.0, "epsilon": 0.1, "mass": 28.086},
+    "SiM": {"charge": 1.874, "sigma": 4.0, "epsilon": 0.1, "mass": 28.086},
+    "O": {"charge": -1.261, "sigma": 2.9, "epsilon": 0.14, "mass": 15.999},
+    "O_end": {"charge": -1.258, "sigma": 2.9, "epsilon": 0.14, "mass": 15.999,
+              "note": "O bonded to a trimethylsilyl Si. The benchmark gives -1.255 to one and -1.261 to the other end O of each chain; their mean keeps every chain exactly neutral and both ends equal."},
+    "C_D": {"charge": -1.102, "sigma": 3.5, "epsilon": 0.066, "mass": 12.011},
+    "C_M": {"charge": -1.083, "sigma": 3.5, "epsilon": 0.066, "mass": 12.011},
+    "H_D": {"charge": 0.224, "sigma": 2.5, "epsilon": 0.03, "mass": 1.008},
+    "H_M": {"charge": 0.2225, "sigma": 2.5, "epsilon": 0.03, "mass": 1.008}
+  },
+  "bonds": {"O-Si": [374.0, 1.64], "C-Si": [187.0, 1.86], "C-H": [340.0, 1.09]},
+  "angles": {"Si-O-Si": [20.0, 145.0], "C-Si-C": [60.0, 110.0], "C-Si-O": [60.0, 100.0], "O-Si-O": [60.0, 110.0],
+             "H-C-H": [33.0, 107.8], "H-C-Si": [35.0, 109.5]},
+  "dihedrals": {"C-Si-O-Si": [0.0, 0.0, 0.0, 0.0], "O-Si-O-Si": [0.0, 0.0, 0.0, 0.0], "C-Si-C-H": [0.0, 0.0, 0.18, 0.0],
+                "H-C-Si-O": [0.0, 0.0, 0.0, 0.0]}
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "ascg Build the AA topology"
+  short_description: "Build and audit all-atom topologies and force fields (OPLS-AA typing, charges, other force fields)"
+  default_prompt: "Use $ascg-aa-build to build and audit the atomistic topology."

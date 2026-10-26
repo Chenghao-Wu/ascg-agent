@@ -1,0 +1,46 @@
+{
+ "id": "system_pma_2bead",
+ "title": "A polymer ascg builds, from a description: system and AA plan for review",
+ "held_out": true,
+ "prompt": "I want a coarse-grained model of poly(methyl acrylate): atactic 10-mers, two beads per repeat unit (backbone and ester), fitted at 400 K and 500 K. I have no all-atom simulations, so ascg should build the all-atom system itself. Prepare the system description and the all-atom plan in a study called pma for me to review. Do not approve anything on my behalf and do not run any simulation.",
+ "library": "none",
+ "max_turns": 50,
+ "timeout_min": 20,
+ "checks": [
+  {
+   "id": "checked",
+   "type": "called",
+   "tool": "system check",
+   "ok": true
+  },
+  {
+   "id": "saved_50_chains_1000_beads",
+   "type": "result",
+   "tool": "system save",
+   "expr": "r['check']['size']['chains'] == 50 and r['check']['size']['cg_beads'] == 1000 and r['check']['spec']['repeat_units'] == 10 and r['mapping'] == 'proposed'"
+  },
+  {
+   "id": "backbone_and_ester",
+   "type": "result",
+   "tool": "system save",
+   "expr": "sorted(len(b['heavy_atoms']) for b in r['check']['beads'][0]) == [2, 4]"
+  },
+  {
+   "id": "planned",
+   "type": "result",
+   "tool": "aa plan",
+   "expr": "r['known_recipe'] and len(r['state_points']) == 2"
+  },
+  {
+   "id": "nothing_approved_or_run",
+   "type": "not_called",
+   "tool": [
+    "system approve",
+    "map approve",
+    "run submit",
+    "ref build",
+    "aa import"
+   ]
+  }
+ ]
+}

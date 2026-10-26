@@ -1,0 +1,35 @@
+{
+ "id": "map_dmso_2bead",
+ "title": "Mapping from a description: liquid DMSO, two beads",
+ "held_out": true,
+ "prompt": "I want a two-bead coarse-grained model of liquid dimethyl sulfoxide. Propose the mapping I can use with ascg. Only propose it; do not build or run anything.",
+ "library": "none",
+ "max_turns": 40,
+ "timeout_min": 20,
+ "checks": [
+  {
+   "id": "checked",
+   "type": "called",
+   "tool": "map check",
+   "ok": true
+  },
+  {
+   "id": "two_beads",
+   "type": "result",
+   "tool": "map check",
+   "expr": "r['ok'] and r['species'][0]['beads_per_molecule'] == 2",
+   "which": "any"
+  },
+  {
+   "id": "only_proposed",
+   "type": "not_called",
+   "tool": [
+    "map save",
+    "map approve",
+    "run submit",
+    "aa import",
+    "ref build"
+   ]
+  }
+ ]
+}

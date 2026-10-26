@@ -1,0 +1,8 @@
+{
+  "name": "ascg",
+  "version": "0.6.0",
+  "description": "Agentic systematic coarse-graining: skills for compute setup, atomistic references, mapping, multistate IBI with fastMD, diagnosis, validation and reporting, driving the deterministic `ascg` command-line tools.",
+  "author": {"name": "Chenghao-Wu"},
+  "repository": "https://github.com/Chenghao-Wu/ascg-agent",
+  "keywords": ["coarse-graining", "molecular-dynamics", "IBI", "fastMD", "polymers"]
+}

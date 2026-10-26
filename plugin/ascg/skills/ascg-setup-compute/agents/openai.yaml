@@ -1,0 +1,4 @@
+interface:
+  display_name: "ascg Connect compute"
+  short_description: "Set up and check compute targets for ascg (ssh or local; Slurm or plain workstations)"
+  default_prompt: "Use $ascg-setup-compute to add and test a compute target."

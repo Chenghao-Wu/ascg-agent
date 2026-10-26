@@ -1,0 +1,4 @@
+interface:
+  display_name: "ascg Validate"
+  short_description: "Interpret held-out validation of a CG model"
+  default_prompt: "Use $ascg-validate to check a validation result independently."

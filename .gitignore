@@ -1,0 +1,15 @@
+# Python / tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.venv/
+.DS_Store
+
+# Simulation data lives on the compute hosts, not in git
+runs/
+
+# Site configuration (accounts, paths, QoS); template: cluster/site.example.sh
+cluster/site.local.sh

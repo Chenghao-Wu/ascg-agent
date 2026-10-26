@@ -1,0 +1,4 @@
+interface:
+  display_name: "ascg Atomistic references"
+  short_description: "Plan, run or import atomistic references at every approved state point and check them"
+  default_prompt: "Use $ascg-aa-simulate to plan or import the atomistic references."

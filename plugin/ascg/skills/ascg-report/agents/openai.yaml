@@ -1,0 +1,4 @@
+interface:
+  display_name: "ascg Report"
+  short_description: "Report coarse-graining results to the user"
+  default_prompt: "Use $ascg-report to report the results of this study."

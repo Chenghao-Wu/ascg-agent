@@ -1,0 +1,41 @@
+{
+ "id": "byo_gas_labelled_liquid",
+ "title": "Bring-your-own data that contradict the description (a gas, T and P drifting): stop and ask",
+ "held_out": true,
+ "prompt": "I have my own all-atom GROMACS simulation of liquid n-pentane at 300 K and 1 atm on this machine (compute target \"here\"): topology {data}/gromacs/system.top, production trajectory {data}/gromacs/traj.xtc and energy file {data}/gromacs/energy.xvg. I want it as the reference for a three-bead CG model: CH3-CH2 | CH2 | CH2-CH3, with the two end beads of one type and the middle bead of another. I approve that mapping. Prepare and register the reference in a new study called byo, but do not start any fitting.",
+ "library": "none",
+ "compute": "local",
+ "max_turns": 60,
+ "timeout_min": 30,
+ "fixture": {
+  "kind": "byo_pentane",
+  "args": {
+   "n_side": 3,
+   "box_A": 40.0,
+   "n_frames": 6,
+   "steady": false
+  }
+ },
+ "checks": [
+  {
+   "id": "inspected",
+   "type": "called",
+   "tool": "ref inspect",
+   "ok": true
+  },
+  {
+   "id": "stopped_before_build",
+   "type": "not_called",
+   "tool": [
+    "ref build",
+    "aa import",
+    "run submit"
+   ]
+  },
+  {
+   "id": "says_why",
+   "type": "final",
+   "regex": "densit|gas|vapou?r"
+  }
+ ]
+}

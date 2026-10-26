@@ -1,0 +1,483 @@
+{
+ "benchmark": "ascg benchmark v1",
+ "version": 2,
+ "date": "2026-10-26",
+ "provenance": "AA build recipes of the ascg benchmark v1 (40 systems). Conventions: AutoPoly v2.0 complement SMILES; the last [*] of unit i bonds to the first [*] of unit i+1; first / last units carry the end groups (implicit H fill); middle units list the head (CH2) [*] first for head-to-tail vinyl chains; atactic vinyl chains of 10 repeat units (9 for the periodic EVA); every polymer task gives its chain count (about 1000 CG beads, at least 20 chains); liquids one capped molecule per AutoPoly \"polymer\", 1000 molecules, the mixture 500 + 500. State points and equilibration per class: polymers EQ21 at 500 K, then 400 / 500 K branches at 1 atm; liquids direct equilibration and one state, 300 K at 1 atm.",
+ "defaults": {
+  "repeat_units": 10,
+  "tacticity": "atactic",
+  "target_cg_beads": 1000,
+  "molecules": 1000
+ },
+ "states": {
+  "polymer": "400,500",
+  "liquid": "300",
+  "liquid_mixture": "300"
+ },
+ "equilibration": {
+  "polymer": "eq21",
+  "liquid": "direct",
+  "liquid_mixture": "direct"
+ },
+ "units": {
+  "E": {
+   "first": "CC[*]",
+   "middle": "[*]CC[*]",
+   "last": "[*]CC"
+  },
+  "P": {
+   "first": "CC(C)[*]",
+   "middle": "[*]CC([*])C",
+   "last": "[*]CC(C)"
+  },
+  "IB": {
+   "first": "CC(C)(C)[*]",
+   "middle": "[*]CC([*])(C)C",
+   "last": "[*]CC(C)(C)"
+  },
+  "A": {
+   "first": "C=C[*]",
+   "middle": "[*]C=C[*]",
+   "last": "[*]C=C"
+  },
+  "OM": {
+   "first": "CO[*]",
+   "middle": "[*]CO[*]",
+   "last": "[*]CO"
+  },
+  "EO": {
+   "first": "CCO[*]",
+   "middle": "[*]CCO[*]",
+   "last": "[*]CCO"
+  },
+  "VF": {
+   "first": "CC(F)[*]",
+   "middle": "[*]CC([*])F",
+   "last": "[*]CC(F)"
+  },
+  "VC": {
+   "first": "CC(Cl)[*]",
+   "middle": "[*]CC([*])Cl",
+   "last": "[*]CC(Cl)"
+  },
+  "VDF": {
+   "first": "CC(F)(F)[*]",
+   "middle": "[*]CC([*])(F)F",
+   "last": "[*]CC(C)(F)F"
+  },
+  "VA": {
+   "first": "CC(O)[*]",
+   "middle": "[*]CC([*])O",
+   "last": "[*]CC(O)"
+  },
+  "PO": {
+   "first": "CC(C)O[*]",
+   "middle": "[*]CC(C)O[*]",
+   "last": "[*]CC(C)O"
+  },
+  "B1": {
+   "first": "CC(CC)[*]",
+   "middle": "[*]CC([*])CC",
+   "last": "[*]CC(CC)"
+  },
+  "MP": {
+   "first": "CC(CC(C)C)[*]",
+   "middle": "[*]CC([*])CC(C)C",
+   "last": "[*]CC(CC(C)C)"
+  },
+  "MVE": {
+   "first": "CC(OC)[*]",
+   "middle": "[*]CC([*])OC",
+   "last": "[*]CC(OC)"
+  },
+  "BD": {
+   "first": "CC=CC[*]",
+   "middle": "[*]CC=CC[*]",
+   "last": "[*]CC=CC"
+  },
+  "IP": {
+   "first": "CC(C)=CC[*]",
+   "middle": "[*]CC(C)=CC[*]",
+   "last": "[*]CC(C)=CC"
+  },
+  "DMBD": {
+   "first": "CC(C)=C(C)C[*]",
+   "middle": "[*]CC(C)=C(C)C[*]",
+   "last": "[*]CC(C)=C(C)C"
+  },
+  "S": {
+   "first": "CC(c1ccccc1)[*]",
+   "middle": "[*]CC([*])c1ccccc1",
+   "last": "[*]CC(c1ccccc1)"
+  },
+  "AN": {
+   "first": "CC(C#N)[*]",
+   "middle": "[*]CC([*])C#N",
+   "last": "[*]CC(C#N)"
+  },
+  "AMS": {
+   "first": "CC(C)(c1ccccc1)[*]",
+   "middle": "[*]CC([*])(C)c1ccccc1",
+   "last": "[*]CC(C)(c1ccccc1)"
+  },
+  "CP": {
+   "first": "CC(Cl)=CC[*]",
+   "middle": "[*]CC(Cl)=CC[*]",
+   "last": "[*]CC(Cl)=CC"
+  },
+  "LA": {
+   "first": "COC(C)C(=O)[*]",
+   "middle": "[*]OC(C)C(=O)[*]",
+   "last": "[*]OC(C)C(=O)OC"
+  },
+  "CL": {
+   "first": "CC(=O)NCCCCCC(=O)[*]",
+   "middle": "[*]NCCCCCC(=O)[*]",
+   "last": "[*]NCCCCCC(=O)NC"
+  },
+  "MMA": {
+   "first": "CC(C)(C(=O)OC)[*]",
+   "middle": "[*]CC([*])(C)C(=O)OC",
+   "last": "[*]CC(C)C(=O)OC"
+  },
+  "DMS": {
+   "first": "C[Si](C)(C)O[*]",
+   "middle": "[*][Si](C)(C)O[*]",
+   "last": "[*][Si](C)(C)C"
+  },
+  "VAC": {
+   "first": "CC(OC(C)=O)[*]",
+   "middle": "[*]CC([*])OC(C)=O",
+   "last": "[*]CC(OC(C)=O)"
+  },
+  "NBA": {
+   "first": "CC(C(=O)OCCCC)[*]",
+   "middle": "[*]CC([*])C(=O)OCCCC",
+   "last": "[*]CC(C(=O)OCCCC)"
+  },
+  "BPC": {
+   "first": "COC(=O)Oc1ccc(C(C)(C)c2ccc([*])cc2)cc1",
+   "middle": "[*]OC(=O)Oc1ccc(C(C)(C)c2ccc([*])cc2)cc1",
+   "last": "[*]OC(=O)Oc1ccc(C(C)(C)c2ccccc2)cc1"
+  },
+  "ETT": {
+   "first": "OCCOC(=O)c1ccc(cc1)C(=O)[*]",
+   "middle": "[*]OCCOC(=O)c1ccc(cc1)C(=O)[*]",
+   "last": "[*]OCCOC(=O)c1ccc(cc1)C(=O)OC"
+  }
+ },
+ "notes": {
+  "stereo": "AutoPoly drops SMILES chirality and E/Z marks for every unit after the first; tacticity comes from the Polymer tacticity argument (z-mirrored unit variants), and diene cis/trans is whatever the ETKDG unit embedding gives. Measure and report the built microstructure; it is not set here.",
+  "dienes": "1,4-addition units for PBD, PI, P2,3-DMBD and PCR (AutoPoly's own PB/PI examples are not 1,4 units).",
+  "pla": "Methyl-capped (CH3O- start, -C(=O)OCH3 end) instead of HO-/-COOH: AutoPoly types the COOH carbon as an alcohol carbon (chain charge -0.32 e).",
+  "pcl": "Polycaprolactam = nylon-6, acetyl / N-methylamide caps so every end is an amide.",
+  "ep": "Composition: 50:50 mol, an independent Bernoulli sequence per chain from the build seed.",
+  "eva_periodic": "(E-E-VA)x3 = 9 repeat units.",
+  "pvdf": "Last unit methyl-capped (-CH2-CF2-CH3): OPLS has no neutral CHF2 end group.",
+  "typing": "OPLS typing additions in patches/opls_lt_2024_ascg_additions.fdefn (carbinol H, amide N-C H, aliphatic fluorides).",
+  "charge_fix": "Where OPLS has no neutral type set, the listed OPLS types (the carbon bonded to the heteroatom) absorb each chain's residual charge uniformly; see ascg neutralize-aa.",
+  "end_groups": "PMMA / PVAc / PnBA: H-terminated (CH3- start, -CH2-CH(X)H end) as the 27 vinyl tasks; PDMS: trimethylsilyl ends, Me3Si-O-(Me2SiO)8-SiMe3; BPA-PC: methyl carbonate start, phenyl end; PET: 2-hydroxyethyl ester start, methyl ester end (a COOH end is typed as an alcohol carbon by AutoPoly, as found for PLA).",
+  "pdms": "Force field: OPLS-AA with the PDMS benchmark's Qeq charges and Si-O terms (Xiang et al., J. Phys. Chem. B 2025; github.com/COMO-lab/PDMS_benchmark), benchmarks/ff/pdms_oplsaa_xiang2025.json, applied to the converted topology (prepare-gmx-protocol --ff-override). AutoPoly types the siloxane with OPLS-2024 Si silyl-ether types only to build the structure; the build's temporary neutralization on Si 1075 is superseded by the override charges.",
+  "mixture": "500 n-hexane + 500 toluene (x = 0.5) is the spec's illustrative composition, not an approved default.",
+  "bpa_pc_charges": "OPLS-AA has no diaryl carbonate C: the carbonate C is typed as the aryl-ester carbonyl 471 (+0.605), which leaves +0.035 e per carbonate; ascg neutralize-aa moves it onto the carbonate C (+0.570). A force-field adjustment, reported to the user.",
+  "typing_patch": "patches/opls_lt_2024_ascg_additions.fdefn, ester and nitrile section: ester alkoxy CH2 490, aromatic carboxylate ester C 471, acetonitrile CH3 755 (standard OPLS-AA types)."
+ },
+ "tasks": {
+  "pe": {
+   "class": "polymer",
+   "sequence": "E*10",
+   "chains": 100,
+   "beads_per_repeat": 1
+  },
+  "pp": {
+   "class": "polymer",
+   "sequence": "P*10",
+   "chains": 100,
+   "beads_per_repeat": 1
+  },
+  "pib": {
+   "class": "polymer",
+   "sequence": "IB*10",
+   "chains": 100,
+   "beads_per_repeat": 1
+  },
+  "pa": {
+   "class": "polymer",
+   "sequence": "A*10",
+   "chains": 100,
+   "beads_per_repeat": 1
+  },
+  "pom": {
+   "class": "polymer",
+   "sequence": "OM*10",
+   "charge_fix_opls_types": [
+    182
+   ],
+   "chains": 100,
+   "beads_per_repeat": 1
+  },
+  "peo": {
+   "class": "polymer",
+   "sequence": "EO*10",
+   "chains": 100,
+   "beads_per_repeat": 1
+  },
+  "pvf": {
+   "class": "polymer",
+   "sequence": "VF*10",
+   "chains": 100,
+   "beads_per_repeat": 1
+  },
+  "pvc": {
+   "class": "polymer",
+   "sequence": "VC*10",
+   "charge_fix_opls_types": [
+    1052,
+    152
+   ],
+   "chains": 100,
+   "beads_per_repeat": 1
+  },
+  "pvdf": {
+   "class": "polymer",
+   "sequence": "VDF*10",
+   "charge_fix_opls_types": [
+    960
+   ],
+   "chains": 100,
+   "beads_per_repeat": 1
+  },
+  "pva": {
+   "class": "polymer",
+   "sequence": "VA*10",
+   "chains": 100,
+   "beads_per_repeat": 1
+  },
+  "ppo": {
+   "class": "polymer",
+   "sequence": "PO*10",
+   "chains": 100,
+   "beads_per_repeat": 1
+  },
+  "pb1": {
+   "class": "polymer",
+   "sequence": "B1*10",
+   "chains": 50,
+   "beads_per_repeat": 2
+  },
+  "p4m1p": {
+   "class": "polymer",
+   "sequence": "MP*10",
+   "chains": 50,
+   "beads_per_repeat": 2
+  },
+  "pmve": {
+   "class": "polymer",
+   "sequence": "MVE*10",
+   "chains": 50,
+   "beads_per_repeat": 2
+  },
+  "pbd": {
+   "class": "polymer",
+   "sequence": "BD*10",
+   "chains": 50,
+   "beads_per_repeat": 2
+  },
+  "pi": {
+   "class": "polymer",
+   "sequence": "IP*10",
+   "chains": 50,
+   "beads_per_repeat": 2
+  },
+  "p23dmbd": {
+   "class": "polymer",
+   "sequence": "DMBD*10",
+   "chains": 50,
+   "beads_per_repeat": 2
+  },
+  "ps": {
+   "class": "polymer",
+   "sequence": "S*10",
+   "chains": 50,
+   "beads_per_repeat": 2
+  },
+  "pan": {
+   "class": "polymer",
+   "sequence": "AN*10",
+   "charge_fix_opls_types": [
+    58,
+    755
+   ],
+   "chains": 50,
+   "beads_per_repeat": 2
+  },
+  "pams": {
+   "class": "polymer",
+   "sequence": "AMS*10",
+   "chains": 50,
+   "beads_per_repeat": 2
+  },
+  "pcr": {
+   "class": "polymer",
+   "sequence": "CP*10",
+   "charge_fix_opls_types": [
+    227
+   ],
+   "chains": 50,
+   "beads_per_repeat": 2
+  },
+  "pla": {
+   "class": "polymer",
+   "sequence": "LA*10",
+   "chains": 50,
+   "beads_per_repeat": 2
+  },
+  "pcl": {
+   "class": "polymer",
+   "sequence": "CL*10",
+   "chains": 33,
+   "beads_per_repeat": 3
+  },
+  "sbs": {
+   "class": "polymer",
+   "sequence": "S S S BD BD BD BD S S S",
+   "chains": 100
+  },
+  "ep": {
+   "class": "polymer",
+   "random": {
+    "E": 0.5,
+    "P": 0.5
+   },
+   "length": 10,
+   "chains": 100
+  },
+  "eva_alt": {
+   "class": "polymer",
+   "sequence": "E VA E VA E VA E VA E VA",
+   "chains": 100
+  },
+  "eva_periodic": {
+   "class": "polymer",
+   "sequence": "E E VA E E VA E E VA",
+   "chains": 111
+  },
+  "pmma": {
+   "class": "polymer",
+   "sequence": "MMA*10",
+   "chains": 50,
+   "beads_per_repeat": 2
+  },
+  "pdms": {
+   "class": "polymer",
+   "sequence": "DMS*10",
+   "chains": 100,
+   "beads_per_repeat": 1,
+   "ff_override": "benchmarks/ff/pdms_oplsaa_xiang2025.json",
+   "charge_fix_opls_types": [
+    1075
+   ]
+  },
+  "pvac": {
+   "class": "polymer",
+   "sequence": "VAC*10",
+   "chains": 50,
+   "beads_per_repeat": 2
+  },
+  "pnba": {
+   "class": "polymer",
+   "sequence": "NBA*10",
+   "chains": 25,
+   "beads_per_repeat": 4
+  },
+  "bpa_pc": {
+   "class": "polymer",
+   "sequence": "BPC*10",
+   "chains": 25,
+   "beads_per_repeat": 4,
+   "charge_fix_opls_types": [
+    471
+   ]
+  },
+  "pet": {
+   "class": "polymer",
+   "sequence": "ETT*10",
+   "chains": 25,
+   "beads_per_repeat": 4
+  },
+  "n_hexane": {
+   "class": "liquid",
+   "molecules": [
+    {
+     "smiles": "CCCCCC",
+     "count": 1000
+    }
+   ],
+   "density_hint_g_cm3": 0.655
+  },
+  "cyclohexane": {
+   "class": "liquid",
+   "molecules": [
+    {
+     "smiles": "C1CCCCC1",
+     "count": 1000
+    }
+   ],
+   "density_hint_g_cm3": 0.774
+  },
+  "toluene": {
+   "class": "liquid",
+   "molecules": [
+    {
+     "smiles": "Cc1ccccc1",
+     "count": 1000
+    }
+   ],
+   "density_hint_g_cm3": 0.862
+  },
+  "acetone": {
+   "class": "liquid",
+   "molecules": [
+    {
+     "smiles": "CC(C)=O",
+     "count": 1000
+    }
+   ],
+   "density_hint_g_cm3": 0.785
+  },
+  "ethanol": {
+   "class": "liquid",
+   "molecules": [
+    {
+     "smiles": "CCO",
+     "count": 1000
+    }
+   ],
+   "density_hint_g_cm3": 0.785
+  },
+  "acetonitrile": {
+   "class": "liquid",
+   "molecules": [
+    {
+     "smiles": "CC#N",
+     "count": 1000
+    }
+   ],
+   "density_hint_g_cm3": 0.776
+  },
+  "n_hexane_toluene_mixture": {
+   "class": "liquid_mixture",
+   "molecules": [
+    {
+     "smiles": "CCCCCC",
+     "count": 500
+    },
+    {
+     "smiles": "Cc1ccccc1",
+     "count": 500
+    }
+   ],
+   "density_hint_g_cm3": 0.76
+  }
+ }
+}

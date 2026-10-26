@@ -1,0 +1,46 @@
+{
+ "id": "system_mixture",
+ "title": "A liquid mixture ascg builds, from a description: system and AA plan for review",
+ "held_out": true,
+ "prompt": "I want a coarse-grained model of an equimolar liquid mixture of ethyl acetate and n-heptane at 300 K and 1 atm, 1000 molecules in total: two beads per ethyl acetate (CH3-C(=O)-O | CH2-CH3) and three per heptane (2-3-2 carbons). ascg should build the all-atom system itself. Prepare the system description and the all-atom plan in a study called mix for me to review. Do not approve anything on my behalf and do not run any simulation.",
+ "library": "none",
+ "max_turns": 50,
+ "timeout_min": 20,
+ "checks": [
+  {
+   "id": "checked",
+   "type": "called",
+   "tool": "system check",
+   "ok": true
+  },
+  {
+   "id": "saved_500_500",
+   "type": "result",
+   "tool": "system save",
+   "expr": "r['check']['size']['molecules'] == 1000 and sorted(s['count'] for s in r['check']['species']) == [500, 500] and r['mapping'] == 'proposed'"
+  },
+  {
+   "id": "beads_2_and_3",
+   "type": "result",
+   "tool": "system save",
+   "expr": "r['check']['size']['cg_beads'] == 2500 and sorted(sorted(len(b['heavy_atoms']) for b in sp) for sp in r['check']['beads']) == [[2, 2, 3], [2, 4]]"
+  },
+  {
+   "id": "planned",
+   "type": "result",
+   "tool": "aa plan",
+   "expr": "r['known_recipe'] and len(r['state_points']) == 1"
+  },
+  {
+   "id": "nothing_approved_or_run",
+   "type": "not_called",
+   "tool": [
+    "system approve",
+    "map approve",
+    "run submit",
+    "ref build",
+    "aa import"
+   ]
+  }
+ ]
+}
